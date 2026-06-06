@@ -16,3 +16,8 @@ Set up cobra-based CLI with subcommands for mill operations.
 [port-mill-add]
 
 Re-implement millpy-add.py: slug validation, wiki upsert, sidebar regeneration.
+
+## **#003:** Port mill-status to Go [A]
+[port-mill-status]
+
+Re-implement mill-status: read tasks.json and print a formatted task list.

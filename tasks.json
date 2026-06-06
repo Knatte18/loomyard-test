@@ -28,5 +28,15 @@
     "deferred": false,
     "brief": "Re-implement millpy-add.py: slug validation, wiki upsert, sidebar regeneration.",
     "body": ""
+  },
+  {
+    "id": 3,
+    "slug": "port-mill-status",
+    "title": "Port mill-status to Go",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "Re-implement mill-status: read tasks.json and print a formatted task list.",
+    "body": ""
   }
 ]
