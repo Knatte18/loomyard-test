@@ -11,3 +11,8 @@ Re-implement _wiki.py in Go as internal/wiki.
 [cli-scaffold]
 
 Set up cobra-based CLI with subcommands for mill operations.
+
+## **#002:** Port mill-add to Go [A]
+[port-mill-add]
+
+Re-implement millpy-add.py: slug validation, wiki upsert, sidebar regeneration.

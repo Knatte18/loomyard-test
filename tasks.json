@@ -18,5 +18,15 @@
     "deferred": false,
     "brief": "Set up cobra-based CLI with subcommands for mill operations.",
     "body": ""
+  },
+  {
+    "id": 2,
+    "slug": "port-mill-add",
+    "title": "Port mill-add to Go",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "Re-implement millpy-add.py: slug validation, wiki upsert, sidebar regeneration.",
+    "body": ""
   }
 ]
