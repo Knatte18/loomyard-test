@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "slug": "port-wiki-module",
+    "title": "Port wiki module to Go",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "Re-implement _wiki.py in Go as internal/wiki.",
+    "body": ""
+  }
+]
