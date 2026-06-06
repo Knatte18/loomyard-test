@@ -8,5 +8,15 @@
     "deferred": false,
     "brief": "Re-implement _wiki.py in Go as internal/wiki.",
     "body": ""
+  },
+  {
+    "id": 1,
+    "slug": "cli-scaffold",
+    "title": "Scaffold CLI entry point",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "Set up cobra-based CLI with subcommands for mill operations.",
+    "body": ""
   }
 ]
