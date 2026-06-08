@@ -22,5 +22,5 @@ Re-implement millpy-add.py: slug validation, wiki upsert, sidebar regeneration.
 
 Re-implement mill-status: read tasks.json and print a formatted task list.
 
-## **#004:** Updated 2 [A]
+## **#004:** Updated 3 [A]
 [bench-task]
