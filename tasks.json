@@ -1,1 +1,22 @@
-[{"id":0,"slug":"bench","title":"u4","depends_on":[]}]
+[
+  {
+    "id": 0,
+    "slug": "bench",
+    "title": "u4",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "",
+    "body": ""
+  },
+  {
+    "id": 1,
+    "slug": "spawn-test",
+    "title": "detached 1780903254",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "",
+    "body": ""
+  }
+]
