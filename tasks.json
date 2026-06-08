@@ -38,5 +38,15 @@
     "deferred": false,
     "brief": "Re-implement mill-status: read tasks.json and print a formatted task list.",
     "body": ""
+  },
+  {
+    "id": 4,
+    "slug": "bench-task",
+    "title": "Updated 0",
+    "depends_on": [],
+    "isolated": false,
+    "deferred": false,
+    "brief": "",
+    "body": ""
   }
 ]
