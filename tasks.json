@@ -1,122 +1,93 @@
 [
   {
     "id": 0,
-    "slug": "bench",
-    "title": "u9",
+    "slug": "core-types",
+    "title": "Define core domain types",
     "depends_on": [],
     "isolated": false,
     "deferred": false,
-    "brief": "",
-    "body": ""
+    "brief": "The Task and Store types and their JSON contract.",
+    "body": "# Core domain types\n\nDefines `Task` (the record persisted in `tasks.json`) and the in-memory `Store`.\n\n## Decisions\n\n- `Status` is a nullable string so \"unset\" differs from empty.\n- Field validation happens via a JSON round-trip.\n"
   },
   {
     "id": 1,
-    "slug": "t1",
-    "title": "x",
-    "depends_on": [],
+    "slug": "storage-layer",
+    "title": "Persistent storage layer",
+    "depends_on": [
+      "core-types"
+    ],
     "isolated": false,
     "deferred": false,
-    "brief": "",
-    "body": ""
+    "brief": "Load and save tasks.json with full validation.",
+    "body": "# Storage layer\n\nLoads and saves `tasks.json`, runs dependency and cycle validation, and writes atomically (temp + rename).\n\n## Notes\n\n- Batch upserts validate all entries, then apply all-or-nothing.\n"
   },
   {
     "id": 2,
-    "slug": "t2",
-    "title": "x",
-    "depends_on": [],
+    "slug": "cli-commands",
+    "title": "CLI subcommands",
+    "depends_on": [
+      "core-types"
+    ],
     "isolated": false,
     "deferred": false,
-    "brief": "",
+    "brief": "upsert, get, list, set-phase, merge, rerender.",
     "body": ""
   },
   {
     "id": 3,
-    "slug": "t3",
-    "title": "x",
-    "depends_on": [],
+    "slug": "http-api",
+    "title": "HTTP API server",
+    "depends_on": [
+      "storage-layer",
+      "cli-commands"
+    ],
     "isolated": false,
     "deferred": false,
-    "brief": "",
-    "body": ""
+    "brief": "Expose the wiki over a small HTTP API.",
+    "body": "# HTTP API\n\nA thin HTTP layer over the same storage and validation the CLI uses.\n\n## Endpoints\n\n- `GET /tasks` — list\n- `POST /tasks` — upsert\n- `POST /tasks/{slug}/phase` — set status\n"
   },
   {
     "id": 4,
-    "slug": "s1",
-    "title": "y",
-    "depends_on": [],
+    "slug": "auth",
+    "title": "API authentication",
+    "depends_on": [
+      "storage-layer"
+    ],
     "isolated": false,
     "deferred": false,
-    "brief": "",
-    "body": ""
+    "brief": "Token-based auth for the HTTP API.",
+    "body": "",
+    "status": "active"
   },
   {
     "id": 5,
-    "slug": "s2",
-    "title": "y",
+    "slug": "write-docs",
+    "title": "Write end-user documentation",
     "depends_on": [],
     "isolated": false,
-    "deferred": false,
-    "brief": "",
+    "deferred": true,
+    "brief": "User guide and API reference.",
     "body": ""
   },
   {
     "id": 6,
-    "slug": "s3",
-    "title": "y",
+    "slug": "experiment-graphql",
+    "title": "Spike: GraphQL endpoint",
     "depends_on": [],
-    "isolated": false,
+    "isolated": true,
     "deferred": false,
-    "brief": "",
-    "body": ""
+    "brief": "Throwaway experiment, off the critical path.",
+    "body": "# GraphQL spike\n\nA quick experiment to gauge whether a GraphQL endpoint is worth it. Isolated: nothing depends on it.\n"
   },
   {
     "id": 7,
-    "slug": "n1",
-    "title": "x",
+    "slug": "initial-spike",
+    "title": "Initial feasibility spike",
     "depends_on": [],
     "isolated": false,
     "deferred": false,
-    "brief": "",
-    "body": ""
-  },
-  {
-    "id": 8,
-    "slug": "n2",
-    "title": "x",
-    "depends_on": [],
-    "isolated": false,
-    "deferred": false,
-    "brief": "",
-    "body": ""
-  },
-  {
-    "id": 9,
-    "slug": "n3",
-    "title": "x",
-    "depends_on": [],
-    "isolated": false,
-    "deferred": false,
-    "brief": "",
-    "body": ""
-  },
-  {
-    "id": 10,
-    "slug": "n4",
-    "title": "x",
-    "depends_on": [],
-    "isolated": false,
-    "deferred": false,
-    "brief": "",
-    "body": ""
-  },
-  {
-    "id": 11,
-    "slug": "s4",
-    "title": "y",
-    "depends_on": [],
-    "isolated": false,
-    "deferred": false,
-    "brief": "",
-    "body": ""
+    "brief": "Proved the end-to-end approach works.",
+    "body": "",
+    "status": "done"
   }
 ]

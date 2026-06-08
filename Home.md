@@ -2,38 +2,56 @@
 
 # Layer A
 
-## **#000:** u9 [A]
-[bench]
+## **#000:** Define core domain types [A]
+[core-types](proposal-core-types.md)
 
-## **#001:** x [A]
-[t1]
+The Task and Store types and their JSON contract.
 
-## **#002:** x [A]
-[t2]
+# Layer B
 
-## **#003:** x [A]
-[t3]
+## **#001:** Persistent storage layer [B]
+[storage-layer](proposal-storage-layer.md)
+Depends on: #000
 
-## **#004:** y [A]
-[s1]
+Load and save tasks.json with full validation.
 
-## **#005:** y [A]
-[s2]
+## **#002:** CLI subcommands [B]
+[cli-commands]
+Depends on: #000
 
-## **#006:** y [A]
-[s3]
+upsert, get, list, set-phase, merge, rerender.
 
-## **#007:** x [A]
-[n1]
+# Layer C
 
-## **#008:** x [A]
-[n2]
+## **#003:** HTTP API server [C]
+[http-api](proposal-http-api.md)
+Depends on: #001, #002
 
-## **#009:** x [A]
-[n3]
+Expose the wiki over a small HTTP API.
 
-## **#010:** x [A]
-[n4]
+## **#004:** API authentication [C]
+[auth] [active]
+Depends on: #001
 
-## **#011:** y [A]
-[s4]
+Token-based auth for the HTTP API.
+
+# Layer Z
+
+## **#006:** Spike: GraphQL endpoint [Z]
+[experiment-graphql](proposal-experiment-graphql.md)
+
+Throwaway experiment, off the critical path.
+
+# Someday
+
+## **#005:** Write end-user documentation
+[write-docs]
+
+User guide and API reference.
+
+# Done
+
+## **#007:** Initial feasibility spike
+[initial-spike] [done]
+
+Proved the end-to-end approach works.
